@@ -1,0 +1,14 @@
+{
+  "name": "booking_api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@punit-j.github.com:punit-j/booking_api.git",
+  "author": "punit-j <jainpunit1997@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mssql": "^10.0.1"
+  }
+}
