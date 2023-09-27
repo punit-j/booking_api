@@ -7,7 +7,7 @@ export const checkRequiredFields = (jsonObj, requiredFields) => {
     return true; // All required fields are present
 }
 
-export const bookingRequiredFields = ['userId', 'finish_at']
+export const bookingRequiredFields = ['userId', 'start_at', 'finish_at']
 
 export const checkDate = (date) => {
     const userDate = new Date(date)

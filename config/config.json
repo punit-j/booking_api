@@ -1,0 +1,15 @@
+{
+    "development": {
+      "dialect": "mssql",
+      "host": "localhost",
+      "username": "sa",
+      "password": "Booking_api",
+      "database": "msdb",
+      "port": 8080,
+      "dialectOptions": {
+        "options": {
+          "encrypt": true
+        }
+      }
+    }
+  }

@@ -1,4 +1,4 @@
-import { getAgentRole } from "../../db/db.js"
+import Agent from "../../models/agent.js"
 
 // If it's not agent request, return error
 export const adminHeaderMiddleware = async (req, res, next) => {
@@ -10,7 +10,7 @@ export const adminHeaderMiddleware = async (req, res, next) => {
     }
 
     try {
-        const agent = await getAgentRole(agentId);
+        const agent = await Agent.getRoleById(agentId);
         if (agent['recordset'][0]['role'] != 'admin') {
             res.status(401).json({ message: 'not authorised' })
             return
@@ -34,7 +34,7 @@ export const regularHeaderMiddleware = async (req, res, next) => {
     }
 
     try {
-        const agent = await getAgentRole(agentId);
+        const agent = await Agent.getRoleById(agentId);
         if (agent['recordset'][0]['role'] != 'regular') {
             res.status(401).json({ message: 'not authorised' })
             return
@@ -58,7 +58,7 @@ export const agentHeaderMiddleware = async (req, res, next) => {
     }
     
     try {
-        const agent = await getAgentRole(agentId);
+        const agent = await Agent.getRoleById(agentId);
         if (agent['recordset'].length == 0) {
             res.status(401).json({ message: 'not authorised' })
             return
